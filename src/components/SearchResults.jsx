@@ -1,4 +1,6 @@
 import React from "react";
+import moment from "moment";
+moment().format();
 
 const SearchResults = ({ results }) => {
   return (
@@ -30,6 +32,8 @@ const SearchResults = ({ results }) => {
           },
           index
         ) => {
+          const a = moment(checkOutDate.split("-").map(num => parseInt(num)));
+          const b = moment(checkInDate.split("-").map(num => parseInt(num)));
           return (
             <tbody key={index}>
               <tr>
@@ -41,6 +45,7 @@ const SearchResults = ({ results }) => {
                 <td>{roomId}</td>
                 <td>{checkInDate}</td>
                 <td>{checkOutDate}</td>
+                <td>{a.diff(b, "days")}</td>
               </tr>
             </tbody>
           );
