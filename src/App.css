@@ -55,3 +55,16 @@ tr {
 .card {
   width: 18rem;
 }
+
+header {
+  display: flex;
+}
+
+#logo {
+  width: 100px;
+  margin-right: 15px;
+}
+
+.card img {
+  height: 200px;
+}
