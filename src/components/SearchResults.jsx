@@ -32,8 +32,8 @@ const SearchResults = ({ results }) => {
           },
           index
         ) => {
-          const a = moment(checkOutDate, "YYYY-MM-DD");
-          const b = moment(checkInDate, "YYYY-MM-DD");
+          const checkOut = moment(checkOutDate, "YYYY-MM-DD");
+          const checkIn = moment(checkInDate, "YYYY-MM-DD");
           return (
             <tbody key={index}>
               <tr>
@@ -45,7 +45,7 @@ const SearchResults = ({ results }) => {
                 <td>{roomId}</td>
                 <td>{checkInDate}</td>
                 <td>{checkOutDate}</td>
-                <td>{a.diff(b, "days")}</td>
+                <td>{checkOut.diff(checkIn, "days")}</td>
               </tr>
             </tbody>
           );
