@@ -18,25 +18,26 @@ const SearchResults = ({ results }) => {
           <th scope="col">Nights</th>
         </tr>
       </thead>
-      {results.map(
-        (
-          {
-            id,
-            title,
-            firstName,
-            surname,
-            email,
-            roomId,
-            checkInDate,
-            checkOutDate
-          },
-          index
-        ) => {
-          const checkOut = moment(checkOutDate, "YYYY-MM-DD");
-          const checkIn = moment(checkInDate, "YYYY-MM-DD");
-          return (
-            <tbody key={index}>
-              <tr>
+      <tbody>
+        {results.map(
+          (
+            {
+              id,
+              title,
+              firstName,
+              surname,
+              email,
+              roomId,
+              checkInDate,
+              checkOutDate
+            },
+            index
+          ) => {
+            const checkOut = moment(checkOutDate, "YYYY-MM-DD");
+            const checkIn = moment(checkInDate, "YYYY-MM-DD");
+
+            return (
+              <tr key={index}>
                 <th scope="row">{id}</th>
                 <td>{title}</td>
                 <td>{firstName}</td>
@@ -47,10 +48,10 @@ const SearchResults = ({ results }) => {
                 <td>{checkOutDate}</td>
                 <td>{checkOut.diff(checkIn, "days")}</td>
               </tr>
-            </tbody>
-          );
-        }
-      )}
+            );
+          }
+        )}
+      </tbody>
     </table>
   );
 };
