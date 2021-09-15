@@ -68,3 +68,8 @@ header {
 .card img {
   height: 200px;
 }
+
+.selectedRow {
+  border-radius: 4px blue;
+  background-color: rgb(243, 243, 243);
+}

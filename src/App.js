@@ -5,6 +5,7 @@ import Bookings from "./components/Bookings";
 import "./App.css";
 import TouristInfoCards from "./components/TouristInfoCards";
 import Footer from "./components/Footer";
+import Restaurant from "./components/Restaurant";
 
 const App = () => {
   const valueFooter = [
@@ -17,6 +18,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
+      <Restaurant />
       <Footer valueFooter={valueFooter} />
     </div>
   );

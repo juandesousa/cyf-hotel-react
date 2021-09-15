@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 moment().format();
 
@@ -36,8 +36,18 @@ const SearchResults = ({ results }) => {
             const checkOut = moment(checkOutDate, "YYYY-MM-DD");
             const checkIn = moment(checkInDate, "YYYY-MM-DD");
 
+            const [backGround, setBackGround] = useState("bg-transparent");
+
+            const changeBackGround = event => {
+              if (event.currentTarget.className === "bg-transparent") {
+                setBackGround("selectedRow");
+              } else {
+                setBackGround("bg-transparent");
+              }
+            };
+
             return (
-              <tr key={index}>
+              <tr className={backGround} key={index} onClick={changeBackGround}>
                 <th scope="row">{id}</th>
                 <td>{title}</td>
                 <td>{firstName}</td>
