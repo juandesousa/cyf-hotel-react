@@ -70,6 +70,5 @@ header {
 }
 
 .selectedRow {
-  border-radius: 4px blue;
-  background-color: rgb(243, 243, 243);
+  background-color: rgba(0, 0, 255, 0.13);
 }
