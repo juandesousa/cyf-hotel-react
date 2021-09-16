@@ -38,12 +38,10 @@ const SearchResults = ({ results }) => {
 
             const [backGround, setBackGround] = useState("bg-transparent");
 
-            const changeBackGround = event => {
-              if (event.currentTarget.className === "bg-transparent") {
-                setBackGround("selectedRow");
-              } else {
-                setBackGround("bg-transparent");
-              }
+            const changeBackGround = () => {
+              backGround === "bg-transparent"
+                ? setBackGround("selectedRow")
+                : setBackGround("bg-transparent");
             };
 
             return (
